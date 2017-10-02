@@ -1,0 +1,19 @@
+{
+    "manifest_version": 2,
+  
+    "name": "Safari Like Bookmark",
+    "description": "Show your bookmarks in new tab in a Safari-style",
+    "version": "1.0",
+  
+    "browser_action": {
+      "default_icon": "public/icon.png",
+      "default_popup": "src/html/bookmark.html"
+    },
+    "permissions": [
+      "tabs",
+      "storage"
+    ],
+    "chrome_url_overrides" : {
+      "newtab": "src/html/bookmark.html"
+    }
+  }
