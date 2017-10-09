@@ -4,13 +4,20 @@
   "description": "Show your bookmarks in new tab in a Safari-style",
   "main": "src/js/index.js",
   "devDependencies": {
-    "browserify": "^14.4.0",
-    "reactify": "^1.1.1"
+    "babel-cli": "6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "webpack": "^3.7.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "./node_modules/.bin/browserify -t reactify -o build/bundle.js src/js/index.jsx"
+    "build1": "babel --plugins transform-react-jsx ./src/js/index.jsx --out-file ./build/index.js && webpack",
+    "build": "webpack -d"
   },
   "author": "AllanFly120",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
+  }
 }
