@@ -11,7 +11,8 @@
     },
     "permissions": [
       "tabs",
-      "storage"
+      "storage",
+      "bookmarks"
     ],
     "chrome_url_overrides" : {
       "newtab": "src/html/bookmark.html"

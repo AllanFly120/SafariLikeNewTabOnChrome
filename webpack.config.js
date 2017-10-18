@@ -3,7 +3,13 @@ module.exports = {
     entry: './src/js/index.jsx',
     output: {
         path: path.resolve(__dirname, './build'),
-        filename: 'bundle.js'
+        filename: 'bundle.js',
+        publicPath: 'build'
+    },
+    devServer: {
+        inline: true,
+        contentBase: './src',
+        port: '6666'
     },
     module: {
         loaders: [
@@ -12,11 +18,12 @@ module.exports = {
                 loader: 'babel-loader',
                 exclude: /node_modules/,
                 query: {
-                    presets: ['es2015', 'react']
+                    presets: ['es2017', 'react']
                 }
             }
         ]
-    }
+    },
+    devtool: 'source-map'
     // externals: {
     //     'react': 'React'
     // }
