@@ -17,5 +17,8 @@
     "chrome_url_overrides" : {
       "newtab": "src/html/bookmark.html"
     },
+    "web_accessible_resources": [
+      "assets/icon.png"
+    ],
     "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
   }

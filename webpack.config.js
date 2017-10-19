@@ -7,9 +7,9 @@ module.exports = {
         publicPath: 'build'
     },
     devServer: {
-        inline: true,
-        contentBase: './src',
-        port: '6666'
+        // inline: true,
+        contentBase: './build',
+        port: '8080'
     },
     module: {
         loaders: [
@@ -20,6 +20,11 @@ module.exports = {
                 query: {
                     presets: ['es2017', 'react']
                 }
+            },
+            {
+                test: /\.css$/,
+                loader: "style-loader!css-loader",
+                exclude: /node_modules/
             }
         ]
     },
