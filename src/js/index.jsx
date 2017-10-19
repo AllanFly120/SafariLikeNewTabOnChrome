@@ -1,7 +1,11 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
 import {Bookmark} from './Bookmark.jsx';
-import style from '../css/index.css';
+import {
+    Col,
+    Row,
+    Grid,
+} from 'react-bootstrap'
 
 class BookmarkPage extends React.Component{
     constructor(props) {
@@ -24,7 +28,11 @@ class BookmarkPage extends React.Component{
         console.log(this.state.bookmarks);
         return (
             // <Bookmark href="www.baidu.com">bookmark</Bookmark>
-            this.state.bookmarks[0].children.map(bookmark => <Bookmark key={bookmark.id} href={bookmark.url}>{bookmark.title}</Bookmark>)
+            <Grid>
+                <Row className="show-grid">           
+                    {this.state.bookmarks[0].children.map(bookmark => <Col xs={4} sm={3} md={2} key={bookmark.id}><Bookmark key={bookmark.id} href={bookmark.url}>{bookmark.title}</Bookmark></Col>)}
+                </Row>
+            </Grid>
         )
     }
 }
