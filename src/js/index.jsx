@@ -31,13 +31,13 @@ class BookmarkPage extends React.Component{
         const bookmarks = this.state.bookmarks[0].children;
         console.log(bookmarks);
         return (
-            // <Bookmark href="www.baidu.com">bookmark</Bookmark>
-            // <Col xs={4} sm={3} md={2} key={bookmarks[0].id}>{bookmarks[0].title}</Col>
-            // <Col xs={4} sm={3} md={2} key={bookmarks[1].id}>{bookmarks[1].title}</Col> 
-           
             <Grid>
                 <Row className="show-grid">   
-                    {this.state.bookmarks[0].children.map(bookmark => <Col xs={4} sm={3} md={2} key={bookmark.id}><Bookmark key={bookmark.id} href={bookmark.url}>{bookmark.title}</Bookmark></Col>)}                
+                    {this.state.bookmarks[0].children.map(bookmark => (
+                        <Col xs={4} sm={3} md={2} key={bookmark.id}>
+                            <Bookmark key={bookmark.id} href={bookmark.url}>{bookmark.title}</Bookmark>
+                        </Col>)
+                    )}                
                 </Row>      
             </Grid>
         )
