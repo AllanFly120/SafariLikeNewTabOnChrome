@@ -24,7 +24,14 @@ module.exports = {
             {
                 test: /\.css$/,
                 loader: "style-loader!css-loader",
-                exclude: /node_modules/
+            },
+            { // Used for Bootstrap Less Source Files
+                test: /\.less/, 
+                loader: 'style!css!less'
+            },
+            { 
+                test: /\.(woff2|woff|ttf|svg|eot)$/, 
+                loader: 'file-loader'
             }
         ]
     },

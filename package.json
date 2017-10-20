@@ -4,11 +4,16 @@
   "description": "Show your bookmarks in new tab in a Safari-style",
   "main": "src/js/index.js",
   "devDependencies": {
+    "webpack-dev-server": "^2.9.2",
     "babel-cli": "6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-es2017": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "bootstrap": "^3.3.7",
     "css-loader": "^0.28.7",
+    "file-loader": "^1.1.5",
+    "less": "^3.0.0-alpha.3",
+    "less-loader": "^4.0.5",
     "style-loader": "^0.19.0",
     "webpack": "^3.7.1"
   },
@@ -21,7 +26,6 @@
   "dependencies": {
     "react": "^16.0.0",
     "react-bootstrap": "^0.31.3",
-    "react-dom": "^16.0.0",
-    "webpack-dev-server": "^2.9.2"
+    "react-dom": "^16.0.0"
   }
 }
