@@ -18,7 +18,7 @@ export class Bookmark extends React.Component {
         }
         return (
             <div className="bookmark" style={bookmarkStyle}>
-                <div><Icon/></div>
+                <div><Icon url={this.state.icon}/></div>
                 <a style={titleStyle} href={this.props.href}>{this.props.children}</a>
             </div>
         )
