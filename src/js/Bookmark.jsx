@@ -9,6 +9,7 @@ export class Bookmark extends React.Component {
     }
 
     render() {
+        console.log('____Bookmark.jsx')
         const bookmarkStyle = {
             height: '200px',
             width: '120px'
@@ -18,7 +19,7 @@ export class Bookmark extends React.Component {
         }
         return (
             <div className="bookmark" style={bookmarkStyle}>
-                <div><Icon url={this.state.icon}/></div>
+                <div><Icon url={this.props.href}/></div>
                 <a style={titleStyle} href={this.props.href}>{this.props.children}</a>
             </div>
         )
