@@ -1,18 +1,34 @@
 export function fetchIcon(url) {
     console.log('fetch url: ', url);
     const request = new Request(url, {
-        mode: 'cors',
-        method: 'get'
+        mode: 'no-cors',
+        method: 'GET',
+        redirect: 'follow',
+        headers: new Headers({
+            'Content-Type': 'text/plain'
+        })
     });
-    return fetch(request)
-        .then(response => response.blob())
-        .then(blob => readBlob(blob))
-        .then(stringifiedPage => parseHTML(stringifiedPage))
-        .then(domObject => fetchIconLink(domObject))
-        .catch(e => {throw e})
+    try {
+        // const response = await fetch(request);
+        // console.log('fetchResult: ', response);
+        // const blob = await response.blob();
+        // const domObj = parseHTML(await readBlob(blob));
+        return 'foo';
+    } catch (e) {
+        throw e;
+    }
+        // .then(response => {
+        //     console.log(response.blob());
+        //     return response.blob();
+        // })
+        // .then(blob => readBlob(blob))
+        // .then(stringifiedPage => parseHTML(stringifiedPage))
+        // .then(domObject => fetchIconLink(domObject))
+        // .catch(e => {throw e})
 }
 
 function readBlob(blob) {
+    console.log('page: ', blob);
     return new Promise((resolve, reject) => {
         const reader = new FileReader();
         reader.onload = function(event) {
@@ -49,5 +65,6 @@ function fetchIconLink(domObj) {
 
 function chooseBestIcon(iconList) {
     //TODO
+    console.log(iconList[0]);
     return iconList[0];
 }

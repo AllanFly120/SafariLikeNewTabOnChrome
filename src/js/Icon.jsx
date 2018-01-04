@@ -9,10 +9,6 @@ export class Icon extends React.Component {
         }
     }
 
-    async componentWillMount() {
-        this.state.pageIcon = await fetchIcon(this.props.url);
-    }
-
     render() {
         return (
         <img src={this.state.pageIcon}/>

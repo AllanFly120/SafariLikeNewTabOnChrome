@@ -9,7 +9,7 @@ export class Bookmark extends React.Component {
     }
 
     render() {
-        console.log('____Bookmark.jsx')
+        // console.log('____Bookmark.jsx')
         const bookmarkStyle = {
             height: '200px',
             width: '120px'

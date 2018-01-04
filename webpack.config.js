@@ -1,6 +1,6 @@
 const path = require('path');
 module.exports = {
-    entry: './src/js/index.jsx',
+    entry: ['babel-polyfill', './src/js/index.jsx'],
     output: {
         path: path.resolve(__dirname, './build'),
         filename: 'bundle.js',
@@ -40,10 +40,4 @@ module.exports = {
         ]
     },
     devtool: 'source-map'
-    // externals: {
-    //     'react': 'React'
-    // }
-    // resolve: {
-    //     extensions: ['', '.js', '.jsx']
-    // }
 }
